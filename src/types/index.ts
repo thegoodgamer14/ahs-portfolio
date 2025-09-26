@@ -46,13 +46,15 @@ export interface SpotifyTrack {
   playedAt: string
 }
 
+export interface Technology {
+  name: string
+  level: 'beginner' | 'intermediate' | 'advanced' | 'expert'
+  icon?: any
+}
+
 export interface TechStack {
   category: string
-  technologies: {
-    name: string
-    level: 'beginner' | 'intermediate' | 'advanced' | 'expert'
-    icon?: string
-  }[]
+  technologies: Technology[]
 }
 
 export interface ContactForm {

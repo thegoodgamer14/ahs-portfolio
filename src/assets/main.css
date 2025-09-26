@@ -17,19 +17,18 @@ body {
   min-height: 100vh;
 }
 
-/* Dark metallica theme color palette */
 :root {
   --primary-blue: #64b5f6;
   --secondary-blue: #42a5f5;
   --light-blue: #90caf9;
   --dark-blue: #1976d2;
   --accent-blue: #2196f3;
-  --text-primary: #e2e8f0;
-  --text-secondary: #94a3b8;
+  --text-primary: #f1f5f9;
+  --text-secondary: #cbd5e1;
   --background: #0f1419;
   --surface: #1e2532;
   --surface-hover: #252b3d;
-  --border: #334155;
+  --border: #475569;
   --metallica-accent: #b0bec5;
 }
 
