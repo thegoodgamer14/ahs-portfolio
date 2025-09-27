@@ -33,7 +33,11 @@
         </div>
 
         <div class="hero-visual fade-in delay-2">
-          <!-- Right side kept blank as requested -->
+          <img
+            src="@/assets/avatars/avatar-Photoroom.png"
+            alt="Aryan waving hi"
+            class="avatar-image"
+          />
         </div>
       </div>
     </div>
@@ -214,6 +218,20 @@ onUnmounted(() => {
   align-items: center;
   position: relative;
   height: 500px;
+}
+
+.avatar-image {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.2));
+  transition: transform 0.3s ease;
+}
+
+.avatar-image:hover {
+  transform: scale(1.05);
 }
 
 .hero-scroll-indicator {

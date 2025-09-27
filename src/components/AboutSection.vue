@@ -7,8 +7,17 @@
       </div>
       
       <div class="about-content">
+        <!-- About Visual -->
+        <div class="about-visual fade-in-up delay-2">
+          <img
+            src="@/assets/avatars/coffee-Photoroom.png"
+            alt="Aryan with coffee"
+            class="about-avatar"
+          />
+        </div>
+
         <!-- Education Section -->
-        <div class="education-section fade-in-up delay-2">
+        <div class="education-section fade-in-up delay-3">
           <div class="education-card">
             <div class="education-header">
               <div class="university-logo">
@@ -38,7 +47,7 @@
         </div>
 
         <!-- Experience Section -->
-        <div class="experience-section fade-in-up delay-3">
+        <div class="experience-section fade-in-up delay-4">
           <h3>Experience</h3>
           <div class="timeline">
             <div class="timeline-item">
@@ -116,6 +125,23 @@
   max-width: 900px;
   margin-left: auto;
   margin-right: auto;
+}
+
+.about-visual {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.about-avatar {
+  max-width: 300px;
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.2));
+  transition: transform 0.3s ease;
+}
+
+.about-avatar:hover {
+  transform: scale(1.05);
 }
 
 .education-section {

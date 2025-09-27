@@ -19,6 +19,19 @@
             <span class="last-updated">Last 10 days</span>
           </div>
 
+          <div class="github-avatars">
+            <img
+              src="@/assets/avatars/les-paul-nobg.png"
+              alt="Aryan with Les Paul guitar"
+              class="guitar-avatar les-paul"
+            />
+            <img
+              src="@/assets/avatars/v-shape-nobg.png"
+              alt="Aryan with V-shape guitar"
+              class="guitar-avatar v-shape"
+            />
+          </div>
+
           <div v-if="loadingGitHub" class="widget-loading">
             <div class="loading-spinner"></div>
             <span>Loading activity...</span>
@@ -153,6 +166,14 @@
               <h3>Latest Blog Post</h3>
             </div>
             <router-link to="/blog" class="view-all">View All</router-link>
+          </div>
+
+          <div class="blog-visual">
+            <img
+              src="@/assets/avatars/typing-Photoroom.png"
+              alt="Aryan typing"
+              class="typing-avatar"
+            />
           </div>
           
           <div v-if="loadingBlog" class="widget-loading">
@@ -426,6 +447,30 @@ const formatRelativeTime = (dateString: string) => {
 }
 
 /* GitHub Widget */
+.github-avatars {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.guitar-avatar {
+  max-width: 150px;
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 8px 25px rgba(0, 0, 0, 0.2));
+  transition: transform 0.3s ease;
+  border-radius: 1rem;
+}
+
+.guitar-avatar:hover {
+  transform: scale(1.05) rotate(2deg);
+}
+
+.guitar-avatar.les-paul:hover {
+  transform: scale(1.05) rotate(-2deg);
+}
+
 .github-content {
   flex: 1;
 }
@@ -603,6 +648,23 @@ const formatRelativeTime = (dateString: string) => {
 }
 
 /* Blog Widget */
+.blog-visual {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.typing-avatar {
+  max-width: 120px;
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.2));
+  transition: transform 0.3s ease;
+}
+
+.typing-avatar:hover {
+  transform: scale(1.05);
+}
+
 .blog-content {
   flex: 1;
 }
@@ -669,6 +731,16 @@ const formatRelativeTime = (dateString: string) => {
 @media (max-width: 768px) {
   .widgets-grid {
     grid-template-columns: 1fr;
+  }
+
+  .github-avatars {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .guitar-avatar {
+    max-width: 120px;
   }
 
   .activity-stats .activity-summary {
