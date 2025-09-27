@@ -39,17 +39,10 @@
 
         <!-- Experience Section -->
         <div class="experience-section fade-in-up delay-4">
-          <div class="experience-header-with-avatar">
-            <h3>Experience</h3>
-            <div class="about-visual">
-              <img
-                src="@/assets/avatars/coffee.png"
-                alt="Aryan with coffee"
-                class="about-avatar"
-              />
-            </div>
-          </div>
-          <div class="timeline">
+          <div class="experience-layout">
+            <div class="experience-content">
+              <h3>Experience</h3>
+              <div class="timeline">
             <div class="timeline-item">
               <div class="timeline-marker"></div>
               <div class="timeline-content">
@@ -94,6 +87,16 @@
                 </div>
               </div>
             </div>
+              </div>
+            </div>
+
+            <div class="about-visual">
+              <img
+                src="@/assets/avatars/coffee.png"
+                alt="Aryan with coffee"
+                class="about-avatar"
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -129,8 +132,8 @@
 
 .about-visual {
   display: flex;
-  justify-content: flex-end;
-  margin-left: 2rem;
+  justify-content: center;
+  align-items: flex-start;
 }
 
 .about-avatar {
@@ -234,18 +237,21 @@
   margin-top: 3rem;
 }
 
-.experience-header-with-avatar {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  margin-bottom: 2rem;
+.experience-layout {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.experience-content {
+  width: 100%;
 }
 
 .experience-section h3 {
   color: var(--text-primary);
-  margin-bottom: 0;
+  margin-bottom: 2rem;
   font-size: 1.5rem;
-  flex: 1;
 }
 
 .timeline {
@@ -347,6 +353,18 @@
 
 
 /* Responsive design */
+@media (max-width: 1024px) {
+  .experience-layout {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .about-visual {
+    text-align: center;
+    margin-top: 2rem;
+  }
+}
+
 @media (max-width: 768px) {
   .about-content {
     max-width: 100%;

@@ -22,6 +22,14 @@
             <a href="#contact" class="btn btn-outline">
               Get In Touch
             </a>
+            <a href="https://drive.google.com/file/d/1fCzKFmqeTAlfwS40s_IzjKox2dFfI_Pf/view?usp=sharing" class="btn btn-outline" target="_blank" rel="noopener noreferrer">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                <polyline points="7,10 12,15 17,10"/>
+                <line x1="12" y1="15" x2="12" y2="3"/>
+              </svg>
+              Resume
+            </a>
           </div>
 
           <div class="hero-quick-links fade-in-up delay-4">
@@ -57,7 +65,7 @@ import { ref, onMounted, onUnmounted } from 'vue'
 
 const showCursor = ref(true)
 const currentText = ref('')
-const roles = ['backend engineer', 'data engineer', 'ai engineer', 'data analyst', 'content writer', 'metalhead']
+const roles = ['software engineer', 'data analyst', 'content writer', 'metalhead']
 let currentRoleIndex = 0
 let currentCharIndex = 0
 let isTyping = true
@@ -177,6 +185,11 @@ onUnmounted(() => {
   display: flex;
   gap: 1rem;
   margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.btn svg {
+  margin-right: 0.5rem;
 }
 
 .hero-quick-links {
@@ -230,6 +243,9 @@ onUnmounted(() => {
   transition: transform 0.3s ease;
   border-radius: 0 0 50% 50%;
   overflow: hidden;
+  border: 4px solid var(--primary-blue);
+  border-top: none;
+  box-shadow: 0 0 20px rgba(100, 181, 246, 0.3);
 }
 
 .avatar-image:hover {
@@ -308,7 +324,12 @@ onUnmounted(() => {
 
   .hero-cta {
     flex-direction: column;
-    align-items: center;
+    align-items: stretch;
+  }
+
+  .hero-cta .btn {
+    text-align: center;
+    justify-content: center;
   }
 
   .hero-quick-links {

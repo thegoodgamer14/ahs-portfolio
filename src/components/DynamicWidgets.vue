@@ -351,28 +351,29 @@ const formatRelativeTime = (dateString: string) => {
   width: 100%;
   height: 100%;
   pointer-events: none;
-  z-index: 1;
+  z-index: 0;
 }
 
 .guitar-decoration {
   position: absolute;
-  max-width: 300px;
+  max-width: 350px;
   width: 25%;
   height: auto;
   filter: drop-shadow(0 8px 25px rgba(0, 0, 0, 0.3));
-  opacity: 0.15;
+  opacity: 1;
+  z-index: 0;
 }
 
 .les-paul-decoration {
-  left: -10%;
-  top: 20%;
-  transform: rotate(-15deg);
+  left: -8%;
+  top: 25%;
+  transform: rotate(-10deg);
 }
 
 .v-shape-decoration {
-  right: -10%;
-  top: 30%;
-  transform: rotate(25deg);
+  right: -8%;
+  top: 35%;
+  transform: rotate(15deg);
 }
 
 .github-row {

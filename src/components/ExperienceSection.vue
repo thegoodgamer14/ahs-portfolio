@@ -114,7 +114,7 @@ const projects: Project[] = [
 }
 
 .section-header {
-  margin-bottom: 3rem;
+  margin-bottom: 0;
 }
 
 .section-header h2 {
@@ -124,10 +124,13 @@ const projects: Project[] = [
 
 .projects-visual {
   margin-top: 2rem;
+  margin-bottom: -2rem;
+  position: relative;
+  z-index: 2;
 }
 
 .typing-avatar {
-  max-width: 200px;
+  max-width: 350px;
   width: 100%;
   height: auto;
   filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.2));
@@ -141,6 +144,8 @@ const projects: Project[] = [
 .projects-content {
   max-width: 1000px;
   margin: 0 auto;
+  position: relative;
+  z-index: 1;
 }
 
 /* Projects Styles */
