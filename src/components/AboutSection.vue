@@ -7,15 +7,6 @@
       </div>
       
       <div class="about-content">
-        <!-- About Visual -->
-        <div class="about-visual fade-in-up delay-2">
-          <img
-            src="@/assets/avatars/coffee-Photoroom.png"
-            alt="Aryan with coffee"
-            class="about-avatar"
-          />
-        </div>
-
         <!-- Education Section -->
         <div class="education-section fade-in-up delay-3">
           <div class="education-card">
@@ -48,7 +39,16 @@
 
         <!-- Experience Section -->
         <div class="experience-section fade-in-up delay-4">
-          <h3>Experience</h3>
+          <div class="experience-header-with-avatar">
+            <h3>Experience</h3>
+            <div class="about-visual">
+              <img
+                src="@/assets/avatars/coffee.png"
+                alt="Aryan with coffee"
+                class="about-avatar"
+              />
+            </div>
+          </div>
           <div class="timeline">
             <div class="timeline-item">
               <div class="timeline-marker"></div>
@@ -128,12 +128,13 @@
 }
 
 .about-visual {
-  text-align: center;
-  margin-bottom: 3rem;
+  display: flex;
+  justify-content: flex-end;
+  margin-left: 2rem;
 }
 
 .about-avatar {
-  max-width: 300px;
+  max-width: 400px;
   width: 100%;
   height: auto;
   filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.2));
@@ -233,10 +234,18 @@
   margin-top: 3rem;
 }
 
+.experience-header-with-avatar {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+}
+
 .experience-section h3 {
   color: var(--text-primary);
-  margin-bottom: 2rem;
+  margin-bottom: 0;
   font-size: 1.5rem;
+  flex: 1;
 }
 
 .timeline {

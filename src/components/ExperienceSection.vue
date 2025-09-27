@@ -4,6 +4,14 @@
       <div class="section-header text-center">
         <h2 class="fade-in-up">Projects</h2>
         <p class="fade-in-up delay-1">Building the future, one line of code at a time</p>
+
+        <div class="projects-visual fade-in-up delay-2">
+          <img
+            src="@/assets/avatars/typing.png"
+            alt="Aryan typing"
+            class="typing-avatar"
+          />
+        </div>
       </div>
 
       <div class="projects-content fade-in-up delay-2">
@@ -112,6 +120,22 @@ const projects: Project[] = [
 .section-header h2 {
   color: var(--primary-blue);
   margin-bottom: 1rem;
+}
+
+.projects-visual {
+  margin-top: 2rem;
+}
+
+.typing-avatar {
+  max-width: 200px;
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.2));
+  transition: transform 0.3s ease;
+}
+
+.typing-avatar:hover {
+  transform: scale(1.05);
 }
 
 .projects-content {

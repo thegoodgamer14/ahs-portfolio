@@ -34,7 +34,7 @@
 
         <div class="hero-visual fade-in delay-2">
           <img
-            src="@/assets/avatars/avatar-Photoroom.png"
+            src="@/assets/avatars/avatar.png"
             alt="Aryan waving hi"
             class="avatar-image"
           />
@@ -217,17 +217,19 @@ onUnmounted(() => {
   justify-content: center;
   align-items: center;
   position: relative;
-  height: 500px;
+  height: 600px;
 }
 
 .avatar-image {
-  max-width: 100%;
-  max-height: 100%;
+  max-width: 120%;
+  max-height: 120%;
   width: auto;
   height: auto;
   object-fit: contain;
   filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.2));
   transition: transform 0.3s ease;
+  border-radius: 0 0 50% 50%;
+  overflow: hidden;
 }
 
 .avatar-image:hover {

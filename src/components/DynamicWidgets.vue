@@ -5,7 +5,21 @@
         <h2 class="fade-in-up">Live Updates</h2>
         <p class="fade-in-up delay-1">Real-time insights into my digital world</p>
       </div>
-      
+
+      <!-- Decorative guitars -->
+      <div class="guitar-decorations">
+        <img
+          src="@/assets/avatars/les-paul.png"
+          alt="Les Paul guitar"
+          class="guitar-decoration les-paul-decoration"
+        />
+        <img
+          src="@/assets/avatars/v-shape.png"
+          alt="V-shape guitar"
+          class="guitar-decoration v-shape-decoration"
+        />
+      </div>
+
       <!-- First row - GitHub Activity (full width) -->
       <div class="github-row">
         <div class="widget github-widget card fade-in-up delay-2">
@@ -19,18 +33,6 @@
             <span class="last-updated">Last 10 days</span>
           </div>
 
-          <div class="github-avatars">
-            <img
-              src="@/assets/avatars/les-paul-nobg.png"
-              alt="Aryan with Les Paul guitar"
-              class="guitar-avatar les-paul"
-            />
-            <img
-              src="@/assets/avatars/v-shape-nobg.png"
-              alt="Aryan with V-shape guitar"
-              class="guitar-avatar v-shape"
-            />
-          </div>
 
           <div v-if="loadingGitHub" class="widget-loading">
             <div class="loading-spinner"></div>
@@ -168,13 +170,6 @@
             <router-link to="/blog" class="view-all">View All</router-link>
           </div>
 
-          <div class="blog-visual">
-            <img
-              src="@/assets/avatars/typing-Photoroom.png"
-              alt="Aryan typing"
-              class="typing-avatar"
-            />
-          </div>
           
           <div v-if="loadingBlog" class="widget-loading">
             <div class="loading-spinner"></div>
@@ -196,7 +191,7 @@
           </div>
           
           <div v-else class="no-posts">
-            <p><strong>Coming Soon!</strong></p>
+            <p><strong>Coming Soon...</strong></p>
             <p>I'll be sharing thoughts on tech, music, and life optimization.</p>
           </div>
         </div>
@@ -303,15 +298,7 @@ const loadLatestBlogPost = async () => {
   try {
     // TODO: Replace with actual Payload CMS integration
     setTimeout(() => {
-      latestPost.value = {
-        id: '1',
-        title: 'The Journey from Software Engineering to Data Engineering',
-        excerpt: 'Exploring my transition from traditional software development to the exciting world of data engineering, and what I\'ve learned along the way.',
-        publishedAt: new Date(Date.now() - 86400000).toISOString(), // 1 day ago
-        slug: 'software-to-data-engineering',
-        tags: ['career', 'data-engineering', 'learning'],
-        readTime: 8
-      }
+      latestPost.value = null // No posts available yet
       loadingBlog.value = false
     }, 800)
   } catch (error) {
@@ -344,6 +331,8 @@ const formatRelativeTime = (dateString: string) => {
 <style scoped>
 .dynamic-widgets {
   background-color: var(--surface);
+  position: relative;
+  overflow: hidden;
 }
 
 .section-header {
@@ -353,6 +342,37 @@ const formatRelativeTime = (dateString: string) => {
 .section-header h2 {
   color: var(--primary-blue);
   margin-bottom: 1rem;
+}
+
+.guitar-decorations {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.guitar-decoration {
+  position: absolute;
+  max-width: 300px;
+  width: 25%;
+  height: auto;
+  filter: drop-shadow(0 8px 25px rgba(0, 0, 0, 0.3));
+  opacity: 0.15;
+}
+
+.les-paul-decoration {
+  left: -10%;
+  top: 20%;
+  transform: rotate(-15deg);
+}
+
+.v-shape-decoration {
+  right: -10%;
+  top: 30%;
+  transform: rotate(25deg);
 }
 
 .github-row {
@@ -370,6 +390,7 @@ const formatRelativeTime = (dateString: string) => {
   min-height: 300px;
   display: flex;
   flex-direction: column;
+  z-index: 2;
 }
 
 .widget-header {
@@ -447,29 +468,6 @@ const formatRelativeTime = (dateString: string) => {
 }
 
 /* GitHub Widget */
-.github-avatars {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  margin-bottom: 1.5rem;
-}
-
-.guitar-avatar {
-  max-width: 150px;
-  width: 100%;
-  height: auto;
-  filter: drop-shadow(0 8px 25px rgba(0, 0, 0, 0.2));
-  transition: transform 0.3s ease;
-  border-radius: 1rem;
-}
-
-.guitar-avatar:hover {
-  transform: scale(1.05) rotate(2deg);
-}
-
-.guitar-avatar.les-paul:hover {
-  transform: scale(1.05) rotate(-2deg);
-}
 
 .github-content {
   flex: 1;
@@ -510,7 +508,7 @@ const formatRelativeTime = (dateString: string) => {
 .activity-stat {
   text-align: center;
   padding: 1rem;
-  background: var(--light-blue);
+  background: var(--primary-blue);
   border-radius: 0.5rem;
 }
 
@@ -518,13 +516,15 @@ const formatRelativeTime = (dateString: string) => {
   display: block;
   font-size: 2rem;
   font-weight: 700;
-  color: var(--primary-blue);
+  color: white;
   margin-bottom: 0.25rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .stat-label {
-  color: var(--text-secondary);
+  color: var(--text-primary);
   font-size: 0.85rem;
+  font-weight: 500;
 }
 
 .activity-details {
@@ -648,22 +648,6 @@ const formatRelativeTime = (dateString: string) => {
 }
 
 /* Blog Widget */
-.blog-visual {
-  text-align: center;
-  margin-bottom: 1rem;
-}
-
-.typing-avatar {
-  max-width: 120px;
-  width: 100%;
-  height: auto;
-  filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.2));
-  transition: transform 0.3s ease;
-}
-
-.typing-avatar:hover {
-  transform: scale(1.05);
-}
 
 .blog-content {
   flex: 1;
