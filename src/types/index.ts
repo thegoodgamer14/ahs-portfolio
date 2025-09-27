@@ -49,7 +49,7 @@ export interface SpotifyTrack {
 export interface Technology {
   name: string
   level: 'beginner' | 'intermediate' | 'advanced' | 'expert'
-  icon?: any
+  svg: string
 }
 
 export interface TechStack {
