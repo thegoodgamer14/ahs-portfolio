@@ -147,11 +147,11 @@ const showTooltip = (tech: Technology, event: MouseEvent) => {
   hoveredTech.value = tech.name
   tooltipVisible.value = true
 
-  // Position tooltip relative to mouse with better positioning
+  // Position tooltip above the icon with proper spacing
   const rect = (event.target as HTMLElement).getBoundingClientRect()
   tooltipPosition.value = {
     x: rect.left + rect.width / 2,
-    y: rect.top - 10
+    y: rect.top - 80 // Position well above the icon
   }
 }
 
